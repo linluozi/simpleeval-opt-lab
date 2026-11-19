@@ -1,0 +1,11 @@
+{
+  "impl": "optimized",
+  "corpus": "synthetic",
+  "scale": "small",
+  "sample": 1,
+  "seconds": 0.009321287274360657,
+  "evaluations": 800,
+  "rows": 100,
+  "expressions": 8,
+  "seed": 20261120
+}

@@ -1,0 +1,25 @@
+{
+  "impl": "optimized",
+  "corpus": "synthetic",
+  "scale": "small",
+  "rows": 100,
+  "expressions": 8,
+  "evaluations_per_sample": 800,
+  "seed": 20261120,
+  "samples": 7,
+  "median_seconds": 0.009431557729840279,
+  "p25_seconds": 0.009321287274360657,
+  "p75_seconds": 0.009930242784321308,
+  "min_seconds": 0.009270434267818928,
+  "max_seconds": 0.01100518461316824,
+  "rel_stdev": 0.05991694696345478,
+  "command": "benchmark/bench.py --impl optimized --corpus synthetic --scale small --out benchmark/raw/agg-optimized-synthetic-small.json",
+  "env": {
+    "cpu": "AMD EPYC 7K62 48-Core Processor",
+    "mem_total": "3812564 kB",
+    "python": "3.12.3",
+    "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39",
+    "machine": "x86_64"
+  },
+  "raw_dir": "/home/ubuntu/GitHub/work/algo/simpleeval-opt-lab/benchmark/raw"
+}

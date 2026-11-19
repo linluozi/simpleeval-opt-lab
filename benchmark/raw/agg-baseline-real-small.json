@@ -1,0 +1,25 @@
+{
+  "impl": "baseline",
+  "corpus": "real",
+  "scale": "small",
+  "rows": 100,
+  "expressions": 29,
+  "evaluations_per_sample": 2900,
+  "seed": 20261120,
+  "samples": 7,
+  "median_seconds": 0.06312822178006172,
+  "p25_seconds": 0.06270264089107513,
+  "p75_seconds": 0.06367931887507439,
+  "min_seconds": 0.062474602833390236,
+  "max_seconds": 0.06375418975949287,
+  "rel_stdev": 0.007258738174650351,
+  "command": "benchmark/bench.py --impl baseline --corpus real --scale small --out benchmark/raw/agg-baseline-real-small.json",
+  "env": {
+    "cpu": "AMD EPYC 7K62 48-Core Processor",
+    "mem_total": "3812564 kB",
+    "python": "3.12.3",
+    "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39",
+    "machine": "x86_64"
+  },
+  "raw_dir": "/home/ubuntu/GitHub/work/algo/simpleeval-opt-lab/benchmark/raw"
+}

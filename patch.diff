@@ -1,0 +1,42 @@
+--- a/simpleeval.py
++++ b/simpleeval.py
+@@ -110,6 +110,7 @@
+ from __future__ import annotations
+ 
+ import ast
++import functools
+ import operator as op
+ import os
+ import sys
+@@ -660,7 +661,13 @@
+         # set a copy of the expression aside, so we can give nice errors...
+         self.expr = expr
+ 
+-        return self._eval(previously_parsed or self.parse(expr))
++        if previously_parsed:
++            return self._eval(previously_parsed)
++        if type(self).parse is SimpleEval.parse and "parse" not in self.__dict__:
++            node = _cached_parse(type(self), expr)
++        else:  # a subclass or an instance override of parse() is honoured
++            node = self.parse(expr)
++        return self._eval(node)
+ 
+     def _eval(self, node):
+         """The internal evaluator used on each node in the parsed tree."""
+@@ -898,6 +905,16 @@
+         return self._eval(node.value)
+ 
+ 
++@functools.lru_cache(maxsize=1024)
++def _cached_parse(cls, expr):
++    """Return the parsed node tree for `expr`, memoised per evaluator class.
++
++    ``parse()`` is a pure function of the expression string, so the resulting
++    AST can be shared by every ``SimpleEval.eval()`` call without changing
++    semantics: the evaluator only reads the tree and never mutates it.
++    """
++    return cls.parse(expr)
++
+ class EvalWithCompoundTypes(SimpleEval):
+     """
+     SimpleEval with additional Compound Types, and their respective
