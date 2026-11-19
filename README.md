@@ -33,7 +33,7 @@ with `simple_eval(expr, names=row)` (a fresh evaluator per call, exactly what
 the library does). `rows` are deterministic (seed 20261120); every timed sample
 is in `benchmark/raw/`.
 
-### Real corpus — expressions from upstream `README.rst` / `tests/` (see `benchmark/corpus.py`,每条第 source)
+### Real corpus — expressions from upstream `README.rst` / `tests/` (see `benchmark/corpus.py`,每条带 source)
 
 | scale (rows × exprs) | baseline median | optimized median | speedup |
 |---|---|---|---|
